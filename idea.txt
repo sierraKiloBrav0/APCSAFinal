@@ -1,0 +1,5 @@
+Our idea: Make a Friend 
+The robot starts as hating you with a friendship value of -100. Using different words in your responses increases or decreases the friendship value. 
+Different words have different values which can be added or subtracted from the total friendship value. For example, the word "hate" might have a friendship value of -10, but "love" might have a value of +10. 
+The robot uses emoticons and langauge to indicate how happy it is with you. You have befriended it when its friendship score is 75 or higher. 
+If the friendship score drops below -150, it stops responding and just tells you to shut the hell up. 
