@@ -1,4 +1,4 @@
-public class Substring {
+public class ValueAssigner {
     private ArrayList<String> friendshipPosValues;
     private ArrayList<String> friendshipNegValues;
     friendshipPosValues = FileReader.toStringList("positive.txt");
