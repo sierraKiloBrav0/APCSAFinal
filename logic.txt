@@ -1,0 +1,7 @@
+User input needs to be taken.
+Input will be split by word and stored in an array
+Array indexes passed into valueaassigner.java where each word will be given a negative, positive, or 0 value the values will be stored in an array of the same length
+the average of the array will be taken to determine if the sentence will net positive or negative, based on this value, the bot's personality will be updated
+If the bot's personality value is in the negative a negative response will be chosen from a file. If it's positive a positive response will be chosen from a different file
+Response will be printed
+Loop and user input taken again
