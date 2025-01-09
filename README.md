@@ -8,3 +8,9 @@ You are making your own chatbot.
 7) You must be able to provide proof of your planning and group management/conversations/conflict resolution
 8) You must give a presentation/demonstration of your project during finals (Professional Dress is required to get credit for the presentation)
 9) you must comment your code using javadoc comments AND create the javadoc files, packaged in a nice folder :)
+
+TASKS FOR THE NEXT WEEK: 
+Sabrina: Fix FileReader to properly align with ValueAssigner, debugging, submit project 
+Tejas: Assembling the final program, debugger
+Rory: Make the presentation, debugging
+Brayden: Finish ResponseGenerator to randomly choose an appropriate response from the respective string array 
