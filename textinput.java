@@ -7,8 +7,12 @@ public class textinput {
         
     }
     //
-    public void splitInput(){
+    public void splitInput(String message){
+        String[] messageStrings = message.split(" ");
+        double[] sentencevalues = new double[messageStrings.length];
 
+        for(int i = 0; i < messageStrings.length; i++){
+            sentencevalues[i] = getFriendshipValue(messageStrings[i]);
+        }
     }
-
 }

@@ -4,7 +4,7 @@ public class ValueAssigner {
     friendshipPosValues = FileReader.toStringList("positive.txt");
     friendshipNegValues = FileReader.toStringList("negative.txt");
 
-    public double getFriendshipValue(String userInput) {
+    public static double getFriendshipValue(String userInput) {
         for (int i = 0; i < friendshipPosValues.size(); i++) {
             String currentLine = friendshipPosValues.get(i);
             if (userInput.contains(currentLine)) {
