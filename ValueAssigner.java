@@ -36,12 +36,4 @@ public class ValueAssigner {
         double average = (double) totalValue / words.length;
         return (int) Math.round(average);
     }
-
-    // Test the implementation
-    public static void main(String[] args) {
-        ValueAssigner assigner = new ValueAssigner();
-        String sentence = "You are such a good and kind friend, but sometimes mean.";
-        int value = assigner.getFriendshipValue(sentence);
-        System.out.println("The friendship value of the sentence is: " + value);
-    }
 }
