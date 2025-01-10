@@ -1,10 +1,13 @@
 public class ResponseGenerator { 
+    // construct a file reader 
+    FileReader in = new FileReader(); 
     // variable declaration 
-    private String[] positiveResponses; // list of all positive responses to randomly select from 
-    private String[] negativeResponses; // list of all negative responses to randomly select from 
-    private String[] neutralResponses; // list of all neutral responses to randomly select from
+    private String[] positiveResponses = in.getContent(positiveResponses.txt); // list of all positive responses to randomly select from 
+    private String[] negativeResponses = in.getContent(negativeResponses.txt); // list of all negative responses to randomly select from 
+    private String[] neutralResponses = in.getContent(neutralResponses.txt); // list of all neutral responses to randomly select from
     private double personalityValue = -20.0; // intial personality value 
-    private double sentenceValue; // sentimental value of the input to be reset at the start of each loop 
+    private double sentenceValue = 0.0; // sentimental value of the input to be reset at the start of each loop 
+    private int linePulled = 0; // random index to take a line from in a text file based on the size of the file 
 
     // call a positive response 
     public String getPositiveResponse() { 
