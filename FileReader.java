@@ -1,4 +1,8 @@
 class FileReader { 
+
+    public FileReader () { 
+    } 
+    
     ArrayList<String> lines; 
     public int currentIndex; 
     private String filePath; 
