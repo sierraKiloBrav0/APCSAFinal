@@ -1,28 +1,47 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class ValueAssigner {
-    // instantiate a file reader 
-    FileReader lists = new Filereader(); 
+
     private ArrayList<String> friendshipPosValues;
     private ArrayList<String> friendshipNegValues;
-    friendshipPosValues = lists.getContent("positive.txt");
-    friendshipNegValues = lists.getContent("negative.txt");
 
-    public static double getFriendshipValue(String userInput) {
-        for (int i = 0; i < friendshipPosValues.size(); i++) {
-            String currentLine = friendshipPosValues.get(i);
-            if (userInput.contains(currentLine)) {
-                return 1.0;
-            }
-            else {
-                for (int j = 0; j < friendshipNegValues.size(); j++) {
-                    String currentLine2 = friendshipNegValues.get(j);
-                    if (userInput.contains(currentLine2)) {
-                        return -1.0;
-                    }
+    public ValueAssigner() {
+        FileReader fileReader = new FileReader();
+        this.friendshipPosValues = fileReader.readLinesFromFile("positive.txt");
+        this.friendshipNegValues = fileReader.readLinesFromFile("negative.txt");
+    }
 
-                }
+    public int getFriendshipValue(String userInput) {
+        if (userInput == null || userInput.isEmpty()) {
+            throw new IllegalArgumentException("Input cannot be null or empty.");
+        }
+
+        // Split the input into individual words
+        String[] words = userInput.toLowerCase().split("\\W+");
+        int totalValue = 0;
+
+        for (String word : words) {
+            if (friendshipPosValues.contains(word)) {
+                totalValue += 1;
+            } else if (friendshipNegValues.contains(word)) {
+                totalValue -= 1;
             }
         }
-        return 0;
 
+        // Calculate the average value and round to the nearest integer
+        double average = (double) totalValue / words.length;
+        return (int) Math.round(average);
+    }
+
+    // Test the implementation
+    public static void main(String[] args) {
+        ValueAssigner assigner = new ValueAssigner();
+        String sentence = "You are such a good and kind friend, but sometimes mean.";
+        int value = assigner.getFriendshipValue(sentence);
+        System.out.println("The friendship value of the sentence is: " + value);
     }
 }
