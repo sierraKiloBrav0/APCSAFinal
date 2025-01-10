@@ -12,16 +12,27 @@ public class ResponseGenerator {
     // call a positive response 
     public String getPositiveResponse() { 
         // filler
+        String line = positiveResponses.nextLine();
+        String parse = line.split(" ");
+        linePulled = new Random().nextInt(parse.length);
+        System.out.println(parse[linePulled]);
     }
 
     // call a negative response 
     public String getNegativeResponse() { 
         // filler 
+        String line = negativeResponses.nextLine();
+        String parse = line.split(" ");
+        linePulled = new Random().nextInt(parse.length);
+        System.out.println(parse[linePulled]);
     }
 
     //call a neutral response 
     public String getNeutralResponse() {
-
+        String line = neutralResponses.nextLine();
+        String parse = line.split(" ");
+        linePulled = new Random().nextInt(parse.length);
+        System.out.println(parse[linePulled]);
     }
     // logic to choose whether to give a positive, negative, or neutral response 
     if ((personalityValue > -25.0 ) && (personalityValue < -10.0)){ 
