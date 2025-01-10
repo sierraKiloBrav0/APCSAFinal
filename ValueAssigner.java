@@ -1,8 +1,10 @@
 public class ValueAssigner {
+    // instantiate a file reader 
+    FileReader lists = new Filereader(); 
     private ArrayList<String> friendshipPosValues;
     private ArrayList<String> friendshipNegValues;
-    friendshipPosValues = FileReader.toStringList("positive.txt");
-    friendshipNegValues = FileReader.toStringList("negative.txt");
+    friendshipPosValues = lists.getContent("positive.txt");
+    friendshipNegValues = lists.getContent("negative.txt");
 
     public static double getFriendshipValue(String userInput) {
         for (int i = 0; i < friendshipPosValues.size(); i++) {
@@ -10,7 +12,7 @@ public class ValueAssigner {
             if (userInput.contains(currentLine)) {
                 return 1.0;
             }
-            else{
+            else {
                 for (int j = 0; j < friendshipNegValues.size(); j++) {
                     String currentLine2 = friendshipNegValues.get(j);
                     if (userInput.contains(currentLine2)) {
