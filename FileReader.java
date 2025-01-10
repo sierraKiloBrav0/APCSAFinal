@@ -1,27 +1,25 @@
-class FileReader { 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-    public FileReader () { 
-    } 
-    
-    ArrayList<String> lines; 
-    public int currentIndex; 
-    private String filePath; 
+class FileReader {
 
-    public ArrayList<String> getContent(String filePath){ 
-        this.filePath = filePath; // store the file path 
+    public FileReader() {
+        // no initialization
+    }
 
-        lines = new ArrayList<>(); 
-        currentIndex = 0; 
-
-        try (Scanner in = new Scanner(new File (filePath))) { 
-            // read the file 
-            while (in.hasNextLine()){ 
-                // add lines to ArrayList 
-                String line = in.nextLine(); 
-                lines.add(line); 
-                currentIndex += 1; 
-            }  
+    public ArrayList<String> readLinesFromFile(String filePath) {
+        ArrayList<String> lines = new ArrayList<>();
+        
+        try (Scanner in = new Scanner(new File(filePath))) {
+            while (in.hasNextLine()) {
+                lines.add(in.nextLine());
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
         }
-        return lines; 
+
+        return lines;
     }
 }
