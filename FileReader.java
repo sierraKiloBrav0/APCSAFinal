@@ -9,7 +9,7 @@ class FileReader {
         // no initialization
     }
 
-    public ArrayList<String> readLinesFromFile(String filePath) {
+    public ArrayList<String> getContent(String filePath) {
         ArrayList<String> lines = new ArrayList<>();
         
         try (Scanner in = new Scanner(new File(filePath))) {
