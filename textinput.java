@@ -1,4 +1,6 @@
 public class textinput {
+
+    ValueAssigner valueA = new ValueAssigner();
     public static void main(String[]args){
 
     }
@@ -12,7 +14,7 @@ public class textinput {
         double[] sentencevalues = new double[messageStrings.length];
 
         for(int i = 0; i < messageStrings.length; i++){
-            sentencevalues[i] = getFriendshipValue(messageStrings[i]);
+            sentencevalues[i] = valueA.getFriendshipValue(messageStrings[i]);
         }
     }
 }
