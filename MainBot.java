@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MainBot {
 
     private int personalityValue = -20; //starting personality
@@ -5,13 +7,23 @@ public class MainBot {
 
     ValueAssigner valueA = new ValueAssigner();
     ResponseGenerator respGen = new ResponseGenerator();
+    Scanner kb = new Scanner(System.in);
 
 
     public static void main(String[]args){
-
+        MainBot butt = new MainBot();
+        System.out.println("Welcome.");
+        butt.userloop();
     }
     //this will contain the main loop that will prompt the user for input and return 
     public void userloop(){
+        boolean flag = true;
+        String user = "";
+        while(flag){
+            user = kb.nextLine();
+            updatePersonality(user);
+            System.out.println(respGen.getResponse(personalityValue) + personalityValue + user);
+        }
         
     }
     //This method will take the user message, pass it to ValueAssigner, and find out if the setence had a net negative or a net positive value
@@ -24,20 +36,23 @@ public class MainBot {
             sentenceValues[i] = valueA.getFriendshipValue(messageStrings[i]);
         }
 
-        double sum;
+        double sum = 0;
         double average = 0;
         //find average
         for(int i = 0; i < sentenceValues.length; i++){
-            sum =+ sentenceValues[i];
-            average = sum/sentenceValues.length;
+            sum += sentenceValues[i];
+
         }
+        average = sum/sentenceValues.length;
+
 
         //update personality
         if(average < 0){
-            personalityValue =- PERSONALITY_MODIFIER;
+            personalityValue -= PERSONALITY_MODIFIER;
+
         }
         else if(average > 0){
-            personalityValue =+ PERSONALITY_MODIFIER;
+            personalityValue += PERSONALITY_MODIFIER;
         }
 
     }
