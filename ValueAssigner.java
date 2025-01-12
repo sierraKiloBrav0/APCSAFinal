@@ -11,8 +11,8 @@ public class ValueAssigner {
 
     public ValueAssigner() {
         FileReader fileReader = new FileReader();
-        this.friendshipPosValues = fileReader.readLinesFromFile("positive.txt");
-        this.friendshipNegValues = fileReader.readLinesFromFile("negative.txt");
+        this.friendshipPosValues = fileReader.getContent("positive.txt");
+        this.friendshipNegValues = fileReader.getContent("negative.txt");
     }
 
     public int getFriendshipValue(String userInput) {
