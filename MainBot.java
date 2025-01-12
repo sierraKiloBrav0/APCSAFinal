@@ -1,4 +1,4 @@
-public class textinput {
+public class MainBot {
 
     ValueAssigner valueA = new ValueAssigner();
     public static void main(String[]args){
