@@ -1,53 +1,53 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 public class ResponseGenerator { 
     // construct a file reader 
     FileReader in = new FileReader(); 
     // variable declaration 
-    private String[] positiveResponses = in.getContent("positiveResponses.txt"); // list of all positive responses to randomly select from 
-    private String[] negativeResponses = in.getContent("negativeResponses.txt"); // list of all negative responses to randomly select from 
-    private String[] neutralResponses = in.getContent("neutralResponses.txt"); // list of all neutral responses to randomly select from
-    private double personalityValue = -20.0; // intial personality value 
+    private ArrayList<String> positiveResponses = in.getContent("positiveResponses.txt"); // list of all positive responses to randomly select from 
+    private ArrayList<String> negativeResponses = in.getContent("negativeResponses.txt"); // list of all negative responses to randomly select from 
+    private ArrayList<String> neutralResponses = in.getContent("neutralResponses.txt"); // list of all neutral responses to randomly select from
+
     private double sentenceValue = 0.0; // sentimental value of the input to be reset at the start of each loop 
     private int linePulled = 0; // random index to take a line from in a text file based on the size of the file 
 
-    public static void main(String[]args){
-        ResponseGenerator bleh = new ResponseGenerator();
+    public String getResponse(int personalityValue){
         // logic to choose whether to give a positive, negative, or neutral response 
-        if ((bleh.personalityValue > -25.0 ) && (bleh.personalityValue < -10.0)){ 
+        if ((personalityValue > -25.0 ) && (personalityValue < -10.0)){ 
             // call getNegativeResponse
-            bleh.getNegativeResponse();
-        } else if ((bleh.personalityValue > -10.0) && (bleh.personalityValue < 10.0)) { 
+            return getNegativeResponse();
+        } else if ((personalityValue > -10.0) && (personalityValue < 10.0)) { 
             // call getNeutralResponse
-            bleh.getNeutralResponse();
-        } else if (bleh.personalityValue > 10.0) { 
+            return getNeutralResponse();
+        } else if (personalityValue > 10.0) { 
             // call getPositiveResponse
-            bleh.getPositiveResponse();
+            return getPositiveResponse();
         } else { 
-            System.out.println("I will never talk to you again, you insignificant wretch! Get out of my sight!"); 
+            return "I will never talk to you again, you insignificant wretch! Get out of my sight!"; 
         }
     }
 
     // call a positive response 
     public String getPositiveResponse() { 
         Random rand = new Random();
-        linePulled = rand.nextInt(positiveResponses.length - 0 + 1) + 0;
-        System.out.println(positiveResponses[linePulled]);
+        linePulled = rand.nextInt(positiveResponses.size() - 0 + 1) + 0;
+        return positiveResponses.get(linePulled);
     }
 
     // call a negative response 
     public String getNegativeResponse() { 
         // filler 
         Random rand = new Random();
-        linePulled = rand.nextInt(negativeResponses.length - 0 + 1) + 0;
-        System.out.println(negativeResponses[linePulled]);
+        linePulled = rand.nextInt(negativeResponses.size() - 0 + 1) + 0;
+        return negativeResponses.get(linePulled);
     }
 
     //call a neutral response 
     public String getNeutralResponse() {
         Random rand = new Random();
-        linePulled = rand.nextInt(neutralResponses.length - 0 + 1) + 0;
-        System.out.println(neutralResponses[linePulled]);
+        linePulled = rand.nextInt(neutralResponses.size() - 0 + 1) + 0;
+        return neutralResponses.get(linePulled);
     }
 
 }

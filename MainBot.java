@@ -1,6 +1,12 @@
 public class MainBot {
 
+    private int personalityValue = -20; //starting personality
+    private final int PERSONALITY_MODIFIER = 5; //how much personality is changed by
+
     ValueAssigner valueA = new ValueAssigner();
+    ResponseGenerator respGen = new ResponseGenerator();
+
+
     public static void main(String[]args){
 
     }
@@ -8,13 +14,31 @@ public class MainBot {
     public void userloop(){
         
     }
-    //
-    public void splitInput(String message){
+    //This method will take the user message, pass it to ValueAssigner, and find out if the setence had a net negative or a net positive value
+    public void updatePersonality(String message){
         String[] messageStrings = message.split(" ");
-        double[] sentencevalues = new double[messageStrings.length];
+        double[] sentenceValues = new double[messageStrings.length];
 
+        //get array with the +,-,0 values
         for(int i = 0; i < messageStrings.length; i++){
-            sentencevalues[i] = valueA.getFriendshipValue(messageStrings[i]);
+            sentenceValues[i] = valueA.getFriendshipValue(messageStrings[i]);
         }
+
+        double sum;
+        double average = 0;
+        //find average
+        for(int i = 0; i < sentenceValues.length; i++){
+            sum =+ sentenceValues[i];
+            average = sum/sentenceValues.length;
+        }
+
+        //update personality
+        if(average < 0){
+            personalityValue =- PERSONALITY_MODIFIER;
+        }
+        else if(average > 0){
+            personalityValue =+ PERSONALITY_MODIFIER;
+        }
+
     }
 }
