@@ -22,7 +22,7 @@ public class MainBot {
         while(flag){
             user = kb.nextLine();
             updatePersonality(user);
-            System.out.println(respGen.getResponse(personalityValue) + personalityValue + user);
+            System.out.println(respGen.getResponse(personalityValue));
         }
         
     }
@@ -41,7 +41,6 @@ public class MainBot {
         //find average
         for(int i = 0; i < sentenceValues.length; i++){
             sum += sentenceValues[i];
-
         }
         average = sum/sentenceValues.length;
 

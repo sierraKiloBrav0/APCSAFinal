@@ -9,7 +9,6 @@ public class ResponseGenerator {
     private ArrayList<String> negativeResponses = in.getContent("negativeResponses.txt"); // list of all negative responses to randomly select from 
     private ArrayList<String> neutralResponses = in.getContent("neutralResponses.txt"); // list of all neutral responses to randomly select from
 
-    private double sentenceValue = 0.0; // sentimental value of the input to be reset at the start of each loop 
     private int linePulled = 0; // random index to take a line from in a text file based on the size of the file 
 
     public String getResponse(int personalityValue){
@@ -31,7 +30,7 @@ public class ResponseGenerator {
     // call a positive response 
     public String getPositiveResponse() { 
         Random rand = new Random();
-        linePulled = rand.nextInt(positiveResponses.size() - 0 + 1) + 0;
+        linePulled = rand.nextInt(positiveResponses.size());
         return positiveResponses.get(linePulled);
     }
 
@@ -39,14 +38,14 @@ public class ResponseGenerator {
     public String getNegativeResponse() { 
         // filler 
         Random rand = new Random();
-        linePulled = rand.nextInt(negativeResponses.size() - 0 + 1) + 0;
+        linePulled = rand.nextInt(negativeResponses.size());
         return negativeResponses.get(linePulled);
     }
 
     //call a neutral response 
     public String getNeutralResponse() {
         Random rand = new Random();
-        linePulled = rand.nextInt(neutralResponses.size() - 0 + 1) + 0;
+        linePulled = rand.nextInt(neutralResponses.size());
         return neutralResponses.get(linePulled);
     }
 
