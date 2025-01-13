@@ -11,7 +11,7 @@ public class Abbadon {
 
 
     public static void main(String[]args){
-        MainBot butt = new MainBot();
+        Abbadon butt = new Abbadon();
         System.out.println("- Welcome. I am Abaddon, child of evil.");
         butt.userloop();
     }
