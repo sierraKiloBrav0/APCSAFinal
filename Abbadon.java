@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MainBot {
+public class Abbadon {
 
     private int personalityValue = -20; //starting personality
     private final int PERSONALITY_MODIFIER = 5; //how much personality is changed by
@@ -12,7 +12,7 @@ public class MainBot {
 
     public static void main(String[]args){
         MainBot butt = new MainBot();
-        System.out.println("Welcome.");
+        System.out.println("- Welcome. I am Abaddon, child of evil.");
         butt.userloop();
     }
     //this will contain the main loop that will prompt the user for input and return 
