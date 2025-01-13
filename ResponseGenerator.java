@@ -13,13 +13,13 @@ public class ResponseGenerator {
 
     public String getResponse(int personalityValue){
         // logic to choose whether to give a positive, negative, or neutral response 
-        if ((personalityValue > -25.0 ) && (personalityValue < -10.0)){ 
+        if ((personalityValue => -50.0) && (personalityValue =< -20.0)){ 
             // call getNegativeResponse
             return getNegativeResponse();
-        } else if ((personalityValue > -10.0) && (personalityValue < 10.0)) { 
+        } else if ((personalityValue => -19.0) && (personalityValue =< 20.0)) { 
             // call getNeutralResponse
             return getNeutralResponse();
-        } else if (personalityValue > 10.0) { 
+        } else if (personalityValue => 21.0) { 
             // call getPositiveResponse
             return getPositiveResponse();
         } else { 
