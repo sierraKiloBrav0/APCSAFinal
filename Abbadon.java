@@ -1,5 +1,13 @@
 import java.util.Scanner;
 
+/**
+* @author Team
+* @version 1.0
+* date: 1/13/2025
+*
+* This program contains a main loop that will use the user message and based on the value, respond back with either a positive, neutral, or negative saying.
+*/
+
 public class Abbadon {
 
     private int personalityValue = -20; //starting personality
