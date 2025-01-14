@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Abbadon {
 
-    private int personalityValue = -20; //starting personality
+    private int personalityValue = -40; //starting personality
     private final int PERSONALITY_MODIFIER = 5; //how much personality is changed by
 
     ValueAssigner valueA = new ValueAssigner();
