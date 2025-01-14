@@ -1,6 +1,14 @@
 import java.util.Random;
 import java.util.ArrayList;
 
+/**
+* Grabs the three response text files and depending on personality value, calles one of the methods to print a response.
+*
+* @author Team
+* @version 1.0
+* date: 1/13/2025
+*/
+
 public class ResponseGenerator { 
     // construct a file reader 
     FileReader in = new FileReader(); 
