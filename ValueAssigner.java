@@ -21,7 +21,7 @@ public class ValueAssigner {
         }
 
         // Split the input into individual words
-        String[] words = userInput.toLowerCase().split("\\W+"); // this confusing little thing in the string is just to identify a word! 
+        String[] words = userInput.toLowerCase().split("\\W+"); // this confusing stuff in the parameter is just to identify a word! 
         int totalValue = 0;
 
         for (String word : words) {
