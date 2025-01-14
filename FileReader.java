@@ -3,6 +3,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+* Program grabs lines from a certain file and adds all of them to an array list
+*
+* @author Team
+* @version 1.0
+* date: 
+*/
+
 class FileReader {
 
     public FileReader() {
