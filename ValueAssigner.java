@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+* Program grabs positive and negative words and if positive, then add one to value and if negative then remove 1. Then calculate the average.
+* 
+* @author Team
+* @version 1.0
+* date: 1/13/2025
+*/
 public class ValueAssigner {
 
     private ArrayList<String> friendshipPosValues;
